@@ -1,3 +1,4 @@
+const { createLoginCallbackHandler } = require('@okta/oidc-middleware/src/connectUtil');
 const express = require('express')
 const app = express()
 app.use(express.json())
@@ -10,7 +11,11 @@ mongoose.connect(`mongodb://localhost:27017/test`).then(()=>{
     }),error => {
     console.log('Could not connect to database : ' + error)
   }
-
+//home page request
+  app.get('/',(req,res)=>{
+res.send("wellcome to the first page")
+ console.log("req:","home page request");
+  })
 
 
 
