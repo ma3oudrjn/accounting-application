@@ -6,7 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 
-const product = require('./routes/productRoutes')
+const products = require('./routes/productRoutes')
 //database
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
@@ -30,7 +30,7 @@ res.send("wellcome to the first page")
   })
 
   app.use(cors());
-  app.use('/product', product)
+  app.use(products)
 
 
 

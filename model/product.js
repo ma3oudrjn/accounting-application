@@ -13,4 +13,4 @@ imageUrl: _.string(),
 isLive: _.boolean().required()
 })
 
-module.exports = mongoose.model(product,productSchema)
+module.exports = mongoose.model("product",productSchema)
