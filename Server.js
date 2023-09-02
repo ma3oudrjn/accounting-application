@@ -17,6 +17,8 @@ res.send("wellcome to the first page")
  console.log("req:","home page request");
   })
 
+  app.ge
+
 
 
 
