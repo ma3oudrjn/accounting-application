@@ -3,8 +3,12 @@ const app = express()
 const _ = require('joi')
 const mongoose = require('mongoose')
 const productSchema = new mongoose.Schema({
-name: _.string().min(3),
-comi
+name: _.string().min(3).required(),
+price: _.number().required(),
+serialNumber: _.string().required(),
+numberOfInventory: _.number(),
+description: _.string().required(),
+imageUrl: _.string()
 
 
 
