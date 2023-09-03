@@ -39,6 +39,40 @@ console.log("faild delete ❌: "+err);
 })
 })
 
+// UPDATE product
+pRouter
+  .route("/update/product/:id")
+  .get((req, res) => {
+    productSchema.findById(req.params.id)
+    .then((data)=>{
+res.status(200)
+res.send("edited✅: "+data)
+console.log(data);
+    })
+    .catch((err)=>{
+res.status(400)
+res.send("cant edit❌: "+err)
+console.log(err);
+
+    })
+})
+
+  // Update product Data
+  .put((req, res) => {
+    productSchema.findByIdAndUpdate(req.params.id,{$set: req.body,}) 
+    .then((data)=>{
+        res.status(200)
+        res.send("edited✅: "+data)
+        console.log(data);
+            })
+            .catch((err)=>{
+        res.status(400)
+        res.send("cant edit❌: "+err)
+        console.log(err);
+    
+        }
+   ) }
+    );
 
 
 
