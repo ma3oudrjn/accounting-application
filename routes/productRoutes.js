@@ -6,17 +6,14 @@ const mongoose = require('mongoose')
 const productSchema = require('../model/product')
 
 pRouter.post("/add/product", (req, res, next) => {
-    productSchema.create(req.body, (error, data) => {
-        if (error) {
-          return next(error);
-        } else {
-          console.log(data);
-          res.json(data);
-        }
-
-    });
-  });
-
+    productSchema.create(req.body).then((result)=>{
+        console.log(result);
+        res.send(result)
+    }).catch((err)=>{
+        console.log(err);
+        res.send(err)
+    })
+})
 pRouter.get('/i',(req,res)=>{
 
 res.send("ok")
