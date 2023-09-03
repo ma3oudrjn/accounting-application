@@ -5,9 +5,8 @@ const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
 name: _.string().min(3).required(),
-Property: _.number(),
-indebtedness: _.number(),
-Debt: ـ.number(),
+id: _.number().required(),
+wallet: _.number().required(),
 Cart: _.array(),
 })
 
