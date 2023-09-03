@@ -5,7 +5,8 @@ pRouter=express.Router()
 const mongoose = require('mongoose')
 const productSchema = require('../model/product')
 
-pRouter.post("/add/product", (req, res, next) => {
+//create new product
+pRouter.post("/add/product", (req, res) => {
     productSchema.create(req.body).then((result)=>{
         console.log(result);
         res.send(result)
@@ -14,10 +15,27 @@ pRouter.post("/add/product", (req, res, next) => {
         res.send(err)
     })
 })
-pRouter.get('/i',(req,res)=>{
+//monitor all product
+pRouter.get("/all", (req, res) => {
+    productSchema.find({}).then((data)=>{
+console.log(data);
+    }).catch((err)=>{
+console.log(err);
+    })
+  });
 
-res.send("ok")
-})
+
+// // delete product
+// pRouter.delete("/delete/product/:_id",(req, res,)=>{
+// productSchema.findByIdAndRemove(req.params._id,(err,data).than((data)=>{
+// console.log("delete Successful:",data);
+// res.send("delete Successful:",data)
+// }).catch((err)=>{
+//     console.log("delete fi:",err);
+//     res.send("delete Successful:",err)
+// }))
+// })
+
 
 
 
