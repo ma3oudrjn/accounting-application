@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 
 const products = require('./routes/productRoutes')
+const users = require('./routes/userRoutes')
 //database
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
@@ -31,6 +32,7 @@ res.send("wellcome to the first page")
 
   app.use(cors());
   app.use(products)
+  app.use(users)
 
 
 

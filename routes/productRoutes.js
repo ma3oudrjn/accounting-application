@@ -16,8 +16,8 @@ pRouter.post("/add/product", (req, res) => {
     })
 })
 
-//monitor all product
-pRouter.get("/all", (req, res) => {
+//monitor all products
+pRouter.get("/all/products", (req, res) => {
     productSchema.find({}).then((data)=>{
 console.log(data);
     }).catch((err)=>{
