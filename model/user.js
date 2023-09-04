@@ -1,13 +1,13 @@
 const express = require('express')
 const app = express()
-const _ = require('joi')
+const joi = require('joi')
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
-name: _.string().min(3).required(),
-id: _.number().required(),
-wallet: _.number().required(),
-Cart: _.array(),
+"name": String,
+"id": Number,
+"wallet": Number,
+"Cart": [{}],
 })
 
-module.exports = mongoose.model("user",userSchema)
+module.exports = mongoose.model("users",userSchema)
