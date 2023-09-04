@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
 name: _.string().min(3).required(),
 price: _.number().required(),
 id: _.number().required(),
-numberOfInventory: _.number(),
+quantity: _.number(),
 description: _.string().required(),
 imageUrl: _.string(),
 isLive: _.boolean().required()
