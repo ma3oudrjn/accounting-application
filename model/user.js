@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const joi = require('joi')
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
