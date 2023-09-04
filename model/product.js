@@ -4,13 +4,14 @@ const _ = require('joi')
 const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema({
-name: _.string().min(3).required(),
-price: _.number().required(),
-id: _.number().required(),
-quantity: _.number(),
-description: _.string().required(),
-imageUrl: _.string(),
-isLive: _.boolean().required()
+    title: { type: String, required: true, unique: true },
+    desc: { type: String, required: true },
+    img: { type: String, required: true },
+    categories: { type: Array },
+    size: { type: Array },
+    color: { type: Array },
+    price: { type: Number, required: true },
+    inStock: { type: Boolean, default: true },
 })
 
 module.exports = mongoose.model("product",productSchema)
