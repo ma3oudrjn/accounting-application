@@ -38,6 +38,7 @@ console.log("faild delete ❌: "+err);
 })
 })
 
+
 // UPDATE product
 pRouter
   .route("/update/product/:id")
@@ -73,6 +74,20 @@ console.log(err);
    ) }
     );
 
+pRouter.get('/tteesstt/:id',(req,res)=>{
+productSchema.findById(req.params.id).then((data)=>{
+// const update=--data.price
+// const filter={title: "the pen"}
+// const newup =  productSchema.findOneAndUpdate({filter}, {update})
+// newup.save();
+data.price=--data.price
+data.save();
+console.log(data);
+}).catch((err)=>{
+console.log(err);
+})
+
+})
 
 
 
