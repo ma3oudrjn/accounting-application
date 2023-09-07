@@ -3,7 +3,7 @@ const app = express()
 uRouter=express.Router()
 
 const userSchema = require('../model/user')
-const product=require('../model/product')
+const productSchema=require('../model/product')
 //create new user
 pRouter.post("/add/user", (req, res) => {
     userSchema.create(req.body).then((result)=>{
@@ -75,8 +75,19 @@ console.log(err);
  ) }
   );
 
+// add to cart
+  pRouter.get('/addto/cart/:id',(req,res)=>{
+    userSchema.findById(req.params.id).then((udata)=>{
+      const y= productSchema.findById(req.body.id)
+      console.log(y);
+   res.send(udata)
+     res.status(200)
 
-  pRouter.get('/addto/cart',(req,res)=>{
+    }).catch((err)=>{
+      res.status(400)
+      res.send(err)
+      console.log(err);
+    })
     
 
   })

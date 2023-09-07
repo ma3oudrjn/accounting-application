@@ -4,6 +4,7 @@ pRouter=express.Router()
 
 const productSchema = require('../model/product')
 
+
 //create new product
 pRouter.post("/add/product", (req, res) => {
     productSchema.create(req.body).then((result)=>{
