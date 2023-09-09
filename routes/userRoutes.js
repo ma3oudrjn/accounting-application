@@ -77,7 +77,7 @@ console.log(err);
   );
 
 // add to cart
-pRouter.get("/add/andBuy/:id",controller.buysomeThing)
+pRouter.get("/add/andBuy/:id",controller.buySomeThing)
 
   
 

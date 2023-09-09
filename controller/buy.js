@@ -5,15 +5,43 @@ const userSchema = require('../model/user')
 const productSchema=require('../model/product')
 
 class buy{
-async buysomeThing(req,res){
-let body = req.body.id
+async buySomeThing(req,res){
+let body = req.body
+let Id = body.productId
 let params = req.params.id
- const x=await userSchema.findById(params)
-const wcart = x.cart
-wcart.push(body)
+ let x =await userSchema.findById(params)
+ try{
+    x.cart.push(Id)
+    x.save()
+    console.log("successfully add product");
+ }
+ catch(err){
+console.log(err);
+ }
+ }
 }
+class incres{
+async incresSomeThing (req,res){
+const customer = req.params.id
+ const Incres = req.body.productId
+ let x = userSchema.findById(customer)
+ let y = await productSchema.findById(Incres)
+
+
+
+
+
+
+
+
 }
 
+
+
+}
+
+
+module.exports = new incres()
 module.exports = new buy()
 
 
