@@ -20,41 +20,7 @@ console.log(err);
  }
  }
 }
-class incres{
-async incresSomeThing (req,res){
-const customer = req.params.id
-const whitchOne = req.body.whitchOne
- let y = await userSchema.findById(customer)
- try{
 
-    const index = y.cart.indexOf(whitchOne);
-    if (index > -1) { // only splice array when item is found
-        y.cart.splice(index, 1); // 2nd parameter means remove one item only
-    }
-    
-    // array = [2, 9]
-    console.log(y.cart); 
-
- }
-  
-
-
-
- 
- catch(err){
-console.log(err);
- }
-}
-
-
-
-
-
-}
-
-
-
-module.exports = new incres()
 module.exports = new buy()
 
 
