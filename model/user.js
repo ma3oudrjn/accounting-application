@@ -7,11 +7,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true},
     phoneNumber:{type:Number},
     wallet: { type: Number, required: true},
-    cart: [{
-        productId:{type:String},
-        quantity: {type:Number},
-        
-}]
+    cart: []
     })
 
 module.exports = mongoose.model("users",userSchema)
