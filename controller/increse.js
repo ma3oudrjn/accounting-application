@@ -1,8 +1,6 @@
-const express = require('express')
-const app = express()
-//const mongoose = require('mongoose')
+
 const userSchema = require('../model/user')
-const productSchema=require('../model/product')
+
 
 class incres{
     async incresSomeThing (req,res){
