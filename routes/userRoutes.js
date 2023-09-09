@@ -4,6 +4,7 @@ uRouter=express.Router()
 
 const userSchema = require('../model/user')
 const productSchema=require('../model/product')
+const controller = require('../controller/buy')
 //create new user
 pRouter.post("/add/user", (req, res) => {
     userSchema.create(req.body).then((result)=>{
@@ -26,7 +27,7 @@ console.log(err);
   });
 
   // delete one user
-pRouter.delete("/delete/user/:id",(req, res,)=>{
+pRouter.delete("/delete/user/:id",(req, res)=>{
     userSchema.findByIdAndRemove(req.params.id)
     .then((data)=>{
         res.status(200).send("deleted  "+data)
@@ -76,21 +77,7 @@ console.log(err);
   );
 
 // add to cart
-  pRouter.get('/addto/cart/:id',(req,res)=>{
-    userSchema.findById(req.params.id).then((udata)=>{
-      const y= productSchema.findById(req.body.id)
-      console.log(y);
-   res.send(udata)
-     res.status(200)
-
-    }).catch((err)=>{
-      res.status(400)
-      res.send(err)
-      console.log(err);
-    })
-    
-
-  })
+pRouter.get("/add/andBuy/:id",controller.buysomeThing)
 
   
 
