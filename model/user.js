@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true},
     phoneNumber:{type:Number},
     wallet: { type: Number, required: true},
-    cart: [,isdone=Boolean]
+    cart: []
     })
 
 module.exports = mongoose.model("users",userSchema)
