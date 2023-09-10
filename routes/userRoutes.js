@@ -6,6 +6,7 @@ const userSchema = require('../model/user')
 const productSchema=require('../model/product')
 const controller = require('../controller/buy')
 const controller1 = require('../controller/increse')
+const controller2 = require("../controller/submitCart")
 //create new user
 pRouter.post("/add/user", (req, res) => {
     userSchema.create(req.body).then((result)=>{
@@ -80,6 +81,7 @@ console.log(err);
 // add to cart
 pRouter.get("/buy/:id",controller.buySomeThing)
 pRouter.get("/remove/:id",controller1.incresSomeThing)
+pRouter.get("/submit/:id",controller2.submitButton)
 
   
 
