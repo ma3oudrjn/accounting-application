@@ -3,7 +3,7 @@ const app = express()
 uRouter=express.Router()
 
 const userSchema = require('../model/user')
-const productSchema=require('../model/product')
+//const productSchema=require('../model/product')
 const controller = require('../controller/buy')
 const controller1 = require('../controller/increse')
 const controller2 = require("../controller/submitCart")
